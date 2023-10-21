@@ -1,3 +1,4 @@
+import heapq
 #Still dont know what to do will start implementing algorithms just in case
 
 #Interval scheduling:
@@ -13,8 +14,8 @@ for interval in intervals:
         visited.append(interval)
 
 print(count, visited)
+
 #Interval partitioning:
-#need to implement priority queue
 def sortJobs(jobList):
     jobList.sort(key = lambda x: x['start'])
     return jobList
@@ -39,3 +40,49 @@ jobList = [{"start": 10, "end": 10.75}, {"start": 10.5, "end": 11}]
 SjobList = sortJobs(jobList)
 result = maxEmployeesRequired(SjobList)
 print(result)
+
+#Interval partitioning using priority queue
+import heapq
+
+class priorityQueue:
+    def __init__(self):
+        self.elements = []
+
+    def push(self, item, priority):
+        heapq.heappush(self.elements, (priority, item))
+
+    def pop(self):
+        if self.elements:
+            return heapq.heappop(self.elements)[1]
+        else:
+            raise IndexError("pop from empty queue")
+
+    def is_empty(self):
+        return len(self.elements) == 0
+
+def maxEmployeesRequired(jobList):
+    customerCare = []
+    while not jobList.is_empty():
+        call = jobList.pop()
+        assigned = False
+        for employee in customerCare:
+            if employee['end'] <= call['start']:
+                assigned = True
+                employee['end'] = call['end']
+                break
+
+        if not assigned:
+            newEmployee = {"end": call['end']}
+            customerCare.append(newEmployee)
+    return len(customerCare)
+
+jobList = [{"start": 10, "end": 10.75}, {"start": 10, "end": 11}, {"start": 10, "end": 12}]
+
+# Priority queue
+pq = priorityQueue()
+for idx, job in enumerate(jobList):
+    pq.push(job, (job["start"], idx))
+
+result2 = maxEmployeesRequired(pq)
+print(result2)
+
