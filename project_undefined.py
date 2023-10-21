@@ -16,7 +16,8 @@ print(count, visited)
 #Interval partitioning:
 #need to implement priority queue
 def sortJobs(jobList):
-    return jobList.sort(key = lambda x: x['start'])
+    jobList.sort(key = lambda x: x['start'])
+    return jobList
 
 def maxEmployeesRequired(jobList):
 	sortedJobList = sortJobs(jobList)
@@ -33,3 +34,8 @@ def maxEmployeesRequired(jobList):
 			newEmployee = {"end": call['end']}
 			customerCare.append(newEmployee)
 	return len(customerCare)
+
+jobList = [{"start": 10, "end": 10.75}, {"start": 10.5, "end": 11}]
+SjobList = sortJobs(jobList)
+result = maxEmployeesRequired(SjobList)
+print(result)
