@@ -15,6 +15,21 @@ for interval in intervals:
 
 print(count, visited)
 
+#Interval scheduling with correct format
+
+jobList = [{"start": 10, "end": 10.75}, {"start": 10.5, "end": 11}, {"start": 12, "end": 13}]
+jobList.sort(key=lambda x: (x["end"],x["start"]))
+count = 0
+visited = []
+end = -1
+for job in jobList:
+    if end <= job["start"]:
+        end = job["end"]
+        count += 1
+        visited.append(job)
+
+print(count, visited)
+
 #Interval partitioning:
 def sortJobs(jobList):
     jobList.sort(key = lambda x: x['start'])
