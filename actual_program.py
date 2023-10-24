@@ -41,7 +41,8 @@ while True:
     print('1.- Inserir uma job')
     print('2.- Worker schedule')
     print('3.- Calculate required number of workers')
-    print('4.- Sair')
+    print('4.- Show job list')
+    print('5.- Sair')
     option = input()
     
     if option == '1':
