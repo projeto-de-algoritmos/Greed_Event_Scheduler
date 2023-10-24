@@ -1,4 +1,5 @@
 import heapq
+from random import randint
 
 class priorityQueue:
     def __init__(self):
@@ -32,7 +33,7 @@ def maxEmployeesRequired(jobList):
             customerCare.append(newEmployee)
     return len(customerCare)
 
-jobList = [{"start": 10, "end": 10.75}, {"start": 10, "end": 11}, {"start": 10, "end": 12}]
+jobList = [{"id":2, "start": 10, "end": 10.75}, {"id":3, "start": 10, "end": 11}, {"id":4, "start": 10, "end": 12}]
 no_workers = -1
 
 while True:
@@ -48,8 +49,8 @@ while True:
     if option == '1':
         start_t = float(input("Enter start time for job"))
         end_t = float(input("Enter end time for job"))
-        
-        new_job = {"start": start_t, "end": end_t}
+        id_i = randint(0,999)
+        new_job = {"id": id_i,"start": start_t, "end": end_t}
         jobList.append(new_job)
     elif option == '2':
         if no_workers > 0:
