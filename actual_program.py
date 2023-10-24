@@ -51,20 +51,23 @@ while True:
         new_job = {"start": start_t, "end": end_t}
         jobList.append(new_job)
     elif option == '2':
-        for x in range(no_workers):
-            jobList_c = jobList
-            # Interval scheduling
-            jobList_c.sort(key=lambda x: (x["end"],x["start"]))
-            count = 0
-            visited = []
-            end = -1
-            for job in jobList_c:
-                if end <= job["start"]:
-                    end = job["end"]
-                    count += 1
-                    visited.append(job)
-                    jobList_c.remove(job)
-            print(count, visited)
+        if no_workers > 0:
+            for x in range(no_workers):
+                jobList_c = jobList
+                # Interval scheduling
+                jobList_c.sort(key=lambda x: (x["end"],x["start"]))
+                count = 0
+                visited = []
+                end = -1
+                for job in jobList_c:
+                    if end <= job["start"]:
+                        end = job["end"]
+                        count += 1
+                        visited.append(job)
+                        jobList_c.remove(job)
+                print(x+1, visited)
+        else:
+            print("Number of workers not defined")
     elif option == '3':
         # Priority queue
         pq = priorityQueue()
