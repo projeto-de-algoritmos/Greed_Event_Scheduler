@@ -78,6 +78,7 @@ while True:
         no_workers = result2
         print(result2)
     elif option == '4':
-        break
+        for job in jobList:
+            print("Starting time:",job["start"]," Ending time:",job["end"])
     elif option == '5':
         break
