@@ -40,10 +40,11 @@ while True:
     print('######Temporary Menu#######')
     print('Selecione uma opção')
     print('1.- Inserir uma job')
-    print('2.- Worker schedule')
-    print('3.- Calculate required number of workers')
-    print('4.- Show job list')
-    print('5.- Sair')
+    print('2.- Inserir no trabalhadores')
+    print('3.- Worker schedule')
+    print('4.- Calculate required number of workers')
+    print('5.- Show job list')
+    print('6.- Sair')
     option = input()
     
     if option == '1':
@@ -53,6 +54,8 @@ while True:
         new_job = {"id": id_i,"start": start_t, "end": end_t}
         jobList.append(new_job)
     elif option == '2':
+        no_workers = int(input("Insert number of workers"))
+    elif option == '3':
         if no_workers > 0:
             for x in range(no_workers):
                 jobList_c = jobList
@@ -70,7 +73,7 @@ while True:
                 print(x+1, visited)
         else:
             print("Number of workers not defined")
-    elif option == '3':
+    elif option == '4':
         # Priority queue
         pq = priorityQueue()
         for idx, job in enumerate(jobList):
@@ -79,8 +82,8 @@ while True:
         result2 = maxEmployeesRequired(pq)
         no_workers = result2
         print(result2)
-    elif option == '4':
+    elif option == '5':
         for job in jobList:
             print("Starting time:",job["start"]," Ending time:",job["end"])
-    elif option == '5':
+    elif option == '6':
         break
