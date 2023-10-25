@@ -58,7 +58,7 @@ while True:
     elif option == '3':
         if no_workers > 0:
             for x in range(no_workers):
-                jobList_c = jobList
+                jobList_c = jobList.copy()
                 # Interval scheduling
                 jobList_c.sort(key=lambda x: (x["end"],x["start"]))
                 count = 0
