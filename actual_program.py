@@ -54,18 +54,32 @@ while True:
     option = input()
     
     if option == '1':
-        start_t = float(input("Enter start time for job"))
-        end_t = float(input("Enter end time for job"))
+        start_h = input("Enter start time for job")
+        start_m = input("Enter start time for job")
         
-        #Create and validate id
-        id_i = randint(0,999)
-        checkid = is_id_not_in_list(jobList,id_i)
-        while checkid == False:
-            id_i = randint(0,999)
-            checkid = is_id_not_in_list(jobList,id_i)
+        if(int(start_h)<0 or int(start_h)>23 or int(start_m)<0 or int(start_m)>60):
+            print("Start time invalid")
+        else:
+            start_t = str(start_h) + str(start_m)
+            start_t = int(start_t)
             
-        new_job = {"id": id_i,"start": start_t, "end": end_t}
-        jobList.append(new_job)
+            end_h = input("Enter end time for job")
+            end_m = input("Enter end time for job")
+            
+            if(int(end_h)<0 or int(end_h)>23 or int(end_m)<0 or int(end_m)>60):
+                print("Start time invalid")
+            else:
+                end_t = str(end_h) + str(end_m)
+                end_t = int(end_t)
+                #Create and validate id
+                id_i = randint(0,999)
+                checkid = is_id_not_in_list(jobList,id_i)
+                while checkid == False:
+                    id_i = randint(0,999)
+                    checkid = is_id_not_in_list(jobList,id_i)
+            
+                new_job = {"id": id_i,"start": start_t, "end": end_t}
+                jobList.append(new_job)
     elif option == '2':
         no_workers = int(input("Insert number of workers"))
     elif option == '3':
