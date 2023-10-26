@@ -33,6 +33,12 @@ def maxEmployeesRequired(jobList):
             customerCare.append(newEmployee)
     return len(customerCare)
 
+def is_id_not_in_list(job_list, target_id):
+    for job in job_list:
+        if job['id'] == target_id:
+            return False
+    return True
+
 jobList = [{"id":2, "start": 10, "end": 10.75}, {"id":3, "start": 10, "end": 11}, {"id":4, "start": 10, "end": 12}]
 no_workers = -1
 
@@ -50,7 +56,14 @@ while True:
     if option == '1':
         start_t = float(input("Enter start time for job"))
         end_t = float(input("Enter end time for job"))
+        
+        #Create and validate id
         id_i = randint(0,999)
+        checkid = is_id_not_in_list(jobList,id_i)
+        while checkid == False:
+            id_i = randint(0,999)
+            checkid = is_id_not_in_list(jobList,id_i)
+            
         new_job = {"id": id_i,"start": start_t, "end": end_t}
         jobList.append(new_job)
     elif option == '2':
