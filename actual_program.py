@@ -67,19 +67,22 @@ while True:
             end_m = input("Enter end time for job")
             
             if(int(end_h)<0 or int(end_h)>23 or int(end_m)<0 or int(end_m)>60):
-                print("Start time invalid")
+                print("end time invalid")
             else:
                 end_t = str(end_h) + str(end_m)
                 end_t = int(end_t)
-                #Create and validate id
-                id_i = randint(0,999)
-                checkid = is_id_not_in_list(jobList,id_i)
-                while checkid == False:
+                if(end_t<start_t):
+                    print("end time cant be less tan start time")
+                else:
+                    #Create and validate id
                     id_i = randint(0,999)
                     checkid = is_id_not_in_list(jobList,id_i)
+                    while checkid == False:
+                        id_i = randint(0,999)
+                        checkid = is_id_not_in_list(jobList,id_i)
             
-                new_job = {"id": id_i,"start": start_t, "end": end_t}
-                jobList.append(new_job)
+                    new_job = {"id": id_i,"start": start_t, "end": end_t}
+                    jobList.append(new_job)
     elif option == '2':
         no_workers = int(input("Insert number of workers"))
     elif option == '3':
