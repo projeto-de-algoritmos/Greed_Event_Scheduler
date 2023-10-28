@@ -39,7 +39,7 @@ def is_id_not_in_list(job_list, target_id):
             return False
     return True
 
-jobList = [{"id":2, "start": 10, "end": 10.75}, {"id":3, "start": 10, "end": 11}, {"id":4, "start": 10, "end": 12}]
+jobList = [{"id":2, "start": 1000, "end": 1075}, {"id":3, "start": 1000, "end": 1100}, {"id":4, "start": 1000, "end": 1200}]
 no_workers = -1
 
 while True:
@@ -83,9 +83,9 @@ while True:
     elif option == '2':
         no_workers = int(input("Insert number of workers"))
     elif option == '3':
+        jobList_c = jobList.copy()
         if no_workers > 0:
             for x in range(no_workers):
-                jobList_c = jobList.copy()
                 # Interval scheduling
                 jobList_c.sort(key=lambda x: (x["end"],x["start"]))
                 count = 0
@@ -98,6 +98,13 @@ while True:
                         visited.append(job)
                         jobList_c.remove(job)
                 print(x+1, visited)
+                if len(visited) == 0:
+                    print("Warning worker has no jobs")
+            if len(jobList_c) != 0:
+                count_jl = 0
+                for job in jobList_c:
+                    count_jl = count_jl + 1
+                print("Warning there are",count_jl,"unnasigned jobs left")
         else:
             print("Number of workers not defined")
     elif option == '4':
