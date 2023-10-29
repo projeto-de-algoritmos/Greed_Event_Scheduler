@@ -84,7 +84,11 @@ while True:
                     new_job = {"id": id_i,"start": start_t, "end": end_t}
                     jobList.append(new_job)
     elif option == '2':
-        no_workers = int(input("Insert number of workers"))
+        no_input = int(input("Insert number of workers"))
+        if(no_input < 0):
+            print("Number of workers cant be less than 0")
+        else:
+            no_workers = no_input
     elif option == '3':
         jobList_c = jobList.copy()
         if no_workers > 0:
