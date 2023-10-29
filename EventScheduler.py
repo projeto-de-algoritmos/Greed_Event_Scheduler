@@ -168,14 +168,13 @@ class JobSchedulerApp:
         pass
 
     def worker_schedule(self):
-        worker_schedule_window = tk.Toplevel(self.master)
-        worker_schedule_window.title("Worker Schedule")
-
-        jobList_c = self.jobList.copy()
-
         if self.no_workers > 0:
+            jobList_c = self.jobList.copy()
+
+            worker_schedule_window = tk.Toplevel(self.master)
+            worker_schedule_window.title("Worker Schedules")
+
             for x in range(self.no_workers):
-                # Interval scheduling
                 jobList_c.sort(key=lambda x: (x["end"], x["start"]))
                 count = 0
                 visited = []
@@ -186,18 +185,29 @@ class JobSchedulerApp:
                         count += 1
                         visited.append(job)
                         jobList_c.remove(job)
-                schedule_label = tk.Label(worker_schedule_window, text=f"Worker {x+1} Schedule: {visited}")
-                schedule_label.pack()
-                if len(visited) == 0:
-                    no_jobs_label = tk.Label(worker_schedule_window, text=f"Warning: Worker {x+1} has no jobs")
-                    no_jobs_label.pack()
+
+                worker_schedule_label = tk.Label(worker_schedule_window, text=f"Worker {x+1} Schedule:")
+                worker_schedule_label.pack()
+
+                if len(visited) > 0:
+                    for job in visited:
+                        start_time = f"{job['start'] // 100:02d}:{job['start'] % 100:02d}"
+                        end_time = f"{job['end'] // 100:02d}:{job['end'] % 100:02d}"
+                        job_info = f"Job {job['id']}: Start time: {start_time}, End time: {end_time}"
+                        job_label = tk.Label(worker_schedule_window, text=job_info)
+                        job_label.pack()
+
+                else:
+                    no_job_label = tk.Label(worker_schedule_window, text="Warning: Worker has no jobs.")
+                    no_job_label.pack()
+
             if len(jobList_c) != 0:
                 count_jl = len(jobList_c)
-                warning_label = tk.Label(worker_schedule_window, text=f"Warning: There are {count_jl} unassigned jobs left")
+                warning_label = tk.Label(worker_schedule_window, text=f"Warning: There are {count_jl} unassigned jobs left.")
                 warning_label.pack()
+
         else:
-            no_workers_label = tk.Label(worker_schedule_window, text="Number of workers not defined")
-            no_workers_label.pack()
+            messagebox.showinfo("No Workers", "Number of workers not defined.")
         pass
 
     def calculate_workers(self):
