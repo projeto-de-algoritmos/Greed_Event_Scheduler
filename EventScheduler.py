@@ -117,17 +117,15 @@ class JobSchedulerApp:
                 if(int(end_hour)<0 or int(end_hour)>23 or int(end_minute)<0 or int(end_minute)>60):
                     messagebox.showinfo("Invalid Input", "End time is invalid.")
                 else:
-                    # Combine hours and minutes
                     start_time = f"{start_hour.zfill(2)}:{start_minute.zfill(2)}"
                     end_time = f"{end_hour.zfill(2)}:{end_minute.zfill(2)}"
 
-                    # Convert start_time and end_time to integers (you can adjust this as needed)
+                    
                     start_t = int(start_time.replace(":", ""))
                     end_t = int(end_time.replace(":", ""))
                     if(end_t < start_t):
                         messagebox.showinfo("Invalid Input", "End time cannot be less than start time.")
-                    else:
-                        #Create and validate id
+                    else:                        
                         id_i = randint(0, 999)
                         checkid = is_id_not_in_list(self.jobList, id_i)
                         while not checkid:
@@ -207,11 +205,46 @@ class JobSchedulerApp:
         pass
 
     def show_jobs(self):
-        # Add your logic to display job list here
+        show_window = tk.Toplevel(self.master)
+        show_window.title("Job List")
+
+        label = tk.Label(show_window, text="Job List")
+        label.pack()
+
+        for job in self.jobList:
+            job_info = f"Id: {job['id']}, Starting time: {job['start']}, Ending time: {job['end']}"
+            job_label = tk.Label(show_window, text=job_info)
+            job_label.pack()
         pass
 
     def remove_job(self):
-        # Add your logic to remove a job by ID here
+        remove_window = tk.Toplevel(self.master)
+        remove_window.title("Remove Job")
+
+        label = tk.Label(remove_window, text="Type id of job to remove:")
+        label.pack()
+
+        entry = tk.Entry(remove_window)
+        entry.pack()
+
+        def remove_job_by_id():
+            job_remove = entry.get()
+            try:
+                job_remove = int(job_remove)
+                remove_s = False
+                for job in self.jobList:
+                    if job['id'] == job_remove:
+                        self.jobList.remove(job)
+                        remove_s = True
+                        messagebox.showinfo("Job Removed", "Job removed successfully.")
+                        remove_window.destroy()
+                if not remove_s:
+                    messagebox.showinfo("Job Not Found", "Job with specified id does not exist.")
+            except ValueError:
+                messagebox.showinfo("Invalid Input", "Please enter a valid integer.")
+
+        submit_button = tk.Button(remove_window, text="Submit", command=remove_job_by_id)
+        submit_button.pack()
         pass
 
 if __name__ == "__main__":
