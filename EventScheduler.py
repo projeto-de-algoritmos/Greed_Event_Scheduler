@@ -112,10 +112,10 @@ class JobSchedulerApp:
             end_minute = end_minute_entry.get()
 
             if(int(start_hour)<0 or int(start_hour)>23 or int(start_minute)<0 or int(start_minute)>60):
-                print("Start time invalid")
+                messagebox.showinfo("Invalid Input", "Start time is invalid.")
             else:
                 if(int(end_hour)<0 or int(end_hour)>23 or int(end_minute)<0 or int(end_minute)>60):
-                    print("end time invalid")
+                    messagebox.showinfo("Invalid Input", "End time is invalid.")
                 else:
                     # Combine hours and minutes
                     start_time = f"{start_hour.zfill(2)}:{start_minute.zfill(2)}"
@@ -125,7 +125,7 @@ class JobSchedulerApp:
                     start_t = int(start_time.replace(":", ""))
                     end_t = int(end_time.replace(":", ""))
                     if(end_t < start_t):
-                        print("end time cant be less than start time")
+                        messagebox.showinfo("Invalid Input", "End time cannot be less than start time.")
                     else:
                         #Create and validate id
                         id_i = randint(0, 999)
