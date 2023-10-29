@@ -212,9 +212,11 @@ class JobSchedulerApp:
         label.pack()
 
         for job in self.jobList:
-            job_info = f"Id: {job['id']}, Starting time: {job['start']}, Ending time: {job['end']}"
+            job_info = f"Id: {job['id']}, Start time: {job['start'] // 100:02d}:{job['start'] % 100:02d}, End time: {job['end'] // 100:02d}:{job['end'] % 100:02d}"
             job_label = tk.Label(show_window, text=job_info)
             job_label.pack()
+
+        show_window.mainloop()
         pass
 
     def remove_job(self):
