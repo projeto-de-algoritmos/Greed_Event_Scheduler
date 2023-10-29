@@ -50,7 +50,8 @@ while True:
     print('3.- Worker schedule')
     print('4.- Calculate required number of workers')
     print('5.- Show job list')
-    print('6.- Sair')
+    print('6.- Remove job')
+    print('7.- Sair')
     option = input()
     
     if option == '1':
@@ -125,6 +126,16 @@ while True:
         print(result2)
     elif option == '5':
         for job in jobList:
-            print("Starting time:",job["start"]," Ending time:",job["end"])
+            print("Id:",job["id"],"Starting time:",job["start"]," Ending time:",job["end"])
     elif option == '6':
+        job_remove = int(input("Type id of job to remove"))
+        remove_s = False
+        for job in jobList:
+            if job['id'] == job_remove:
+                jobList.remove(job)
+                remove_s = True
+                print("Job removed")
+        if remove_s == False:
+            print("Job doesnt exist")
+    elif option == '7':
         break
