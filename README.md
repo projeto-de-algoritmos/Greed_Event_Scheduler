@@ -18,10 +18,9 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 **Linguagem**: Python<br>
 Python<br>
 Powershell<br>
-Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seguida, coloque o nome do aplicativo com a extensão de arquivo. py (EventScheduler.py)
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seguida, coloque o nome do aplicativo com a extensão de arquivo. py (EventScheduler.py)
 
 ## Outros 
 Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
