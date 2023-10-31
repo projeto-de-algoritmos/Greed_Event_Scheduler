@@ -24,7 +24,7 @@ Este projecto tem como objectivo utilizar os algoritmos aprendidos na classe, ne
 Python<br>
 Powershell<br>
 **Execução**:<br>
-Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seguida, coloque o nome do aplicativo com a extensão de arquivo. py (EventScheduler.py)
+Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seguida, coloque o nome do aplicativo com a extensão de arquivo. py (EventScheduler.py).<br>
 **Exemplo**:<br>
 ```bash
   cd 'D:\UnB\Ciclo 6\PROJETO DE ALGORITMOS\TRABALHOS\TRABALHO 3\Greed_temp\.git\'
