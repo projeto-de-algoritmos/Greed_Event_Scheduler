@@ -23,7 +23,7 @@ Powershell<br>
 Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seguida, coloque o nome do aplicativo com a extensão de arquivo. py (EventScheduler.py)
 
 ## Uso 
-Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seguida, coloque o nome do aplicativo com a extensão de arquivo. py (EventScheduler.py)
+Uma vez executados os comandos aparecerá um menu, para utilizar as funcionalidades da aplicação apertar o boton com a ação desejada e em caso seja necessário preencher os espaços utilizando o formato adequado, este será mostrado na tela.
 
 ## Outros 
 Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
