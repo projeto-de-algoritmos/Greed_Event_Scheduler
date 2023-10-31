@@ -16,8 +16,9 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
 **Linguagem**: Python<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+Python<br>
+Powershell<br>
+Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seguida, coloque o nome do aplicativo com a extensão de arquivo. py (EventScheduler.py)
 
 ## Uso 
 Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
