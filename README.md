@@ -30,7 +30,7 @@ Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seg
   cd 'D:\UnB\Ciclo 6\PROJETO DE ALGORITMOS\TRABALHOS\TRABALHO 3\Greed_temp\.git\'
 ```
 ```bash
-  D:\UnB\Ciclo 6\PROJETO DE ALGORITMOS\TRABALHOS\TRABALHO 3\Greed_temp> .\EventScheduler.py
+  .\EventScheduler.py
 ```
 ## Uso 
 Uma vez executados os comandos aparecerá um menu, para utilizar as funcionalidades da aplicação apertar o boton com a ação desejada e em caso seja necessário preencher os espaços utilizando o formato adequado, este será mostrado na tela.
