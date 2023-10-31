@@ -29,8 +29,6 @@ Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seg
 ## Uso 
 Uma vez executados os comandos aparecerá um menu, para utilizar as funcionalidades da aplicação apertar o boton com a ação desejada e em caso seja necessário preencher os espaços utilizando o formato adequado, este será mostrado na tela.
 
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
 
 
 
