@@ -9,7 +9,7 @@
 | 21/1006957  |  Sebastián Héctor Zuzunaga Rosado |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+Este projecto tem como objectivo utilizar os algoritmos aprendidos na classe, neste caso a Interval Scheduling e a Interval Partitioning, para calcular os horários dos trabalhadores numa empresa, além de calcular qual é o número mínimo de trabalhadores necessários para cumprir com as tarefas diárias. 
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
