@@ -25,7 +25,12 @@ Python<br>
 Powershell<br>
 **Execução**:<br>
 Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seguida, coloque o nome do aplicativo com a extensão de arquivo. py (EventScheduler.py)
-
+```bash
+  cd "endereço de armazenamento" 
+```
+```bash
+  cd "endereço de armazenamento" .\EventScheduler.py
+```
 ## Uso 
 Uma vez executados os comandos aparecerá um menu, para utilizar as funcionalidades da aplicação apertar o boton com a ação desejada e em caso seja necessário preencher os espaços utilizando o formato adequado, este será mostrado na tela.
 
