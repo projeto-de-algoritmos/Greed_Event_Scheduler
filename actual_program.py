@@ -75,7 +75,6 @@ while True:
                 if(end_t<start_t):
                     print("end time cant be less tan start time")
                 else:
-                    #Create and validate id
                     id_i = randint(0,999)
                     checkid = is_id_not_in_list(jobList,id_i)
                     while checkid == False:
