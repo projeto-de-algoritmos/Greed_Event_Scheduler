@@ -16,6 +16,7 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
 **Linguagem**: Python<br>
+**Pré-requisitos**:<br>
 Python<br>
 Powershell<br>
 
