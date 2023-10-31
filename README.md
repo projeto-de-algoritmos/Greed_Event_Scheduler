@@ -27,10 +27,10 @@ Powershell<br>
 Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seguida, coloque o nome do aplicativo com a extensão de arquivo. py (EventScheduler.py)
 **Exemplo**:<br>
 ```bash
-  cd '.\UnB\Ciclo 6\PROJETO DE ALGORITMOS\TRABALHOS\TRABALHO 3\Greed_temp\'
+  cd 'D:\UnB\Ciclo 6\PROJETO DE ALGORITMOS\TRABALHOS\TRABALHO 3\Greed_temp\.git\'
 ```
 ```bash
-  PS D:\UnB\Ciclo 6\PROJETO DE ALGORITMOS\TRABALHOS\TRABALHO 3\Greed_temp> .\EventScheduler.py
+  D:\UnB\Ciclo 6\PROJETO DE ALGORITMOS\TRABALHOS\TRABALHO 3\Greed_temp> .\EventScheduler.py
 ```
 ## Uso 
 Uma vez executados os comandos aparecerá um menu, para utilizar as funcionalidades da aplicação apertar o boton com a ação desejada e em caso seja necessário preencher os espaços utilizando o formato adequado, este será mostrado na tela.
