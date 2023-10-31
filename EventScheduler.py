@@ -49,7 +49,7 @@ class JobSchedulerApp:
         self.master = master
         self.master.title("Job Scheduler")
 
-        self.jobList = [{"id":2, "inicio": 1000, "fim": 1075}, {"id":3, "inicio": 1000, "fim": 1100}, {"id":4, "inicio": 1000, "fim": 1200}]
+        self.jobList = [{"id":2, "inicio": 1000, "fim": 1045}, {"id":3, "inicio": 1000, "fim": 1100}, {"id":4, "inicio": 1000, "fim": 1200}]
         self.no_workers = -1
 
         self.label = tk.Label(master, text="Menu principal")
