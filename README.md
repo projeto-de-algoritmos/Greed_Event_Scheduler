@@ -12,7 +12,11 @@
 Este projecto tem como objectivo utilizar os algoritmos aprendidos na classe, neste caso a Interval Scheduling e a Interval Partitioning, para calcular os horários dos trabalhadores numa empresa, além de calcular qual é o número mínimo de trabalhadores necessários para cumprir com as tarefas diárias. Para calcular o número de trabalhadores utiliza-se a Interval Partitioning, enquanto que para calcular os horários dos trabalhadores se executa um Interval Scheduling para cada trabalhador atualmente em planilha.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+![Main menu](https://github.com/projeto-de-algoritmos/Greed_Event_Scheduler/assets/98188828/7775e282-7700-4a33-a36d-2f1f30793120)
+
+![Menu+Schedule](https://github.com/projeto-de-algoritmos/Greed_Event_Scheduler/assets/98188828/4fd99e6f-5271-4436-9e86-7900d1f4b643)
+
+![menu+listatrabalho](https://github.com/projeto-de-algoritmos/Greed_Event_Scheduler/assets/98188828/fdeab21c-ce49-4117-9444-502db612971f)
 
 ## Instalação 
 **Linguagem**: Python<br>
